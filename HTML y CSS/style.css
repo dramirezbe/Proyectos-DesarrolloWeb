@@ -1,47 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+
+
+a{
+    text-decoration: none;
+    
+}
+
 body{
     margin: 0;
     padding: 0;
     border: 0;
 }
-header{
-    margin: -9px;
+.head-img{
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+
+}
+nav{
+    box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.5);
+    padding: 10px 0px 10px 0px;
+    display: flex;
+    align-items: center;
 }
 .Main_title{
+    font-family: 'Open Sans', sans-serif;
     font-weight: bold;
-    text-decoration: none;
-    text-align: center;
     font-size: larger;
 }
 .txt-clr-courses{
+    font-family: 'Open Sans', sans-serif;
     color: blueviolet;
-    text-decoration: none;
-    text-align: center;
-}
-.menu:hover{
-    font-weight: bold;
-    color: blue;
 }
 .txt-clr-courses:hover{
     font-weight: bold;
     color: blue;
 }
-nav{
-    box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.5);
-    margin:10px 10px 10px 10px;    
-    display: flex;
-    align-items: center;
-}
 .menu{
-    margin: 3px 5px 3px 5px;
-    text-decoration: none;
+    font-family: 'Open Sans', sans-serif;
     text-align: center;
     color: black;
 }
+.menu:hover{
+    font-weight: bold;
+    color: blue;
+}
+#Search{
+    font-family: 'Open Sans', sans-serif;
+    width: 200px;
+    height: 25px;
+}
 .Prg_pro{
+    font-family: 'Open Sans', sans-serif;
     color:blue;
     font-size: larger;
 
 }
 .Prg_pro:hover{
-    color:aquamarine;
+    background-color:aquamarine;
+}
+.c1{
+    flex-grow: 0.7;
+    text-align: right;
+}
+.c2{
+    flex-grow: 0.1;
+    text-align: center;
+}
+.c3{
+    flex-grow: 0.2;
+    text-align: center;
+}
+.c4{flex-grow: 0.2;
+    text-align: center;
+}
+.c5{
+    flex-grow: 0.5;
+    text-align: left;
+    position: relative;
+    left: 20px;
+}
+.c6{
+    flex-grow: 0.5;
+}
+.art1{
+    position: relative;
+    top: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+#main-p{
+    font-family: 'Open Sans', sans-serif;
+}
+.second-p{
+    color: blue;
+}
+p{
+    text-align: center;
+}
+#email{
+    height: 47px;
+    border-radius: 3%; 
+}
+.Subscribe-bt{
+    background-color: #059CF8;
+    width: 118px;
+    height: 53px;
+    position: relative;
+    left: -9px;
+    border-radius: 3%; 
+}
+.Subsribe-bt:hover{
+    background-color: #03338F;
+}
+.art2{
+    position: relative;
+    top: 50px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.txt-tabla{
+    font-family: 'Open Sans', sans-serif;
+}
+
+td{
+    font-family: 'Open Sans', sans-serif;
+    border: 1px solid black;
+    border-radius: 5%;
+}
+.all-tut{
+    display: flex;
+}
+
+footer{
+    position: relative;
+    top: 100px;
+    background-color: #2B324D;
+    display: flex;
+    justify-content: space-around;
+    color: white;
+}
+li{
+    font-family: 'Open Sans', sans-serif;
+    margin: 10px 10px 10px 10px;
+    list-style:none;
 }
