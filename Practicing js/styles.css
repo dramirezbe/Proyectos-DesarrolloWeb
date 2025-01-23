@@ -1,0 +1,31 @@
+:root {
+    /* CSS HEX */
+    --champagne: #ffe4c4ff;
+    --brown-sugar: #b4654aff;
+    --delft-blue: #29335cff;
+    --cadet-gray: #799496ff;
+    --fire-engine-red: #c42021ff;
+}
+
+body {
+    font-family: "Playwrite VN", serif;
+    font-weight: 200;
+}
+
+header {
+    background-color: var(--delft-blue);
+}
+main {
+    background-color: var(--brown-sugar);
+    text-align: center;
+}
+footer {
+    background-color: var(--cadet-gray);
+
+}
+
+/*tags*/
+
+h1 {
+    color: var(--champagne);
+}
