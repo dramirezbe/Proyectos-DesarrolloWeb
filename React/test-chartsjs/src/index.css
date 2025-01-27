@@ -7,13 +7,15 @@ html, body, #root {
 
 :root {
   /* Colores */
-  --color-primary: #F2F2F2;
-  --color-secondary: #D4AC98;
-  --color-accent: #52B788;
-  --color-alert: #F2994A;
-  --color-text-light: #333333;
-  --color-text-dark: #FFFFFF;
-  --color-border: #E0E0E0;
+  --color-primary: #303036; /* Fondo principal */
+  --color-secondary: #6A6A6C; /* Fondo secundario */
+  --color-text-primary: #FFFFFF; /* Texto principal */
+  --color-text-secondary: #B9BBBE; /* Texto secundario */
+  --color-accent: #2938de; /* Azul vibrante */
+  --color-accent-light: #5865F2;
+  --color-highlight: #57F287; /* Verde neón */
+  --color-alt-accent: #EB459E; /* Rosa neón */
+  --color-danger: #ED4245; /* Rojo alerta */
 
   /* Fuentes */
   --font-primary: 'Roboto Mono', monospace;

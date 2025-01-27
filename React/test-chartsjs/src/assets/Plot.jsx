@@ -1,82 +1,104 @@
 import React from "react";
-import { Line } from "react-chartjs-2";
 import {
   Chart as ChartJS,
   LineElement,
-  CategoryScale,
-  LinearScale,
   PointElement,
+  LinearScale,
+  CategoryScale,
   Tooltip,
+  Legend,
 } from "chart.js";
+import { Line } from "react-chartjs-2";
 
-ChartJS.register(LineElement, CategoryScale, LinearScale, PointElement, Tooltip);
+import "../index.css";
+// Obtén las variables de color definidas en el CSS
+const styles = getComputedStyle(document.documentElement);
+const colorTextPrimary = styles.getPropertyValue("--color-text-primary");
+const colorAccent = styles.getPropertyValue("--color-accent");
+const colorAccentLight = styles.getPropertyValue("--color-accent-light");
 
-const Plot = ({ xData, yData, yData2 }) => {
-  const chartData = {
+
+// Register chart.js components
+ChartJS.register(LineElement, PointElement, LinearScale, CategoryScale, Tooltip, Legend);
+
+const Plot = ({ xData, yData }) => {
+  if (!xData || !yData || xData.length !== yData.length || xData.length === 0) {
+    return <div>Error: xData and yData must have the same non-zero length.</div>;
+  }
+
+  // Prepare data for the chart
+  const data = {
     labels: xData,
     datasets: [
       {
-        label: "Frequency",
+        label: "Spectrum",
         data: yData,
-        borderColor: "#BC6C25",
-        backgroundColor: "rgba(75, 192, 192, 0.2)",
+        borderColor: colorAccent.trim(),
+        backgroundColor: colorAccentLight.trim(),
         borderWidth: 2,
-        showLine: true, // Ensures the points are connected by a line
-        pointRadius: 0, // Adjust the size of the points
-      },
-      {
-        label: "Magnitude",
-        data: yData2,
-        borderColor: "rgba(192, 75, 192, 1)",
-        backgroundColor: "rgba(192, 75, 192, 0.2)",
-        borderWidth: 2,
-        showLine: true, // Ensures the points are connected by a line
-        pointRadius: 0, // Adjust the size of the points
+        pointRadius: 0, // Avoid rendering points for large datasets
+        tension: 0.1, // Smooth curve
       },
     ],
   };
 
   const options = {
     responsive: true,
-    plugins: {
-      tooltip: {
-        enabled: true,
-        mode: "nearest", // Show tooltip on the nearest point
-        intersect: false,
-        callbacks: {
-          label: (context) => `Value: ${context.raw.toFixed(3)}`,
-        },
-      },
-      legend: {
-        display: true, // Show the legend for better clarity
-        position: "top",
-      },
-    },
+    maintainAspectRatio: false,
     scales: {
       x: {
+        type: "linear",
         title: {
           display: true,
-          text: "Frequency (Hz)",
+          text: "Frequency (Hz)", // Título del eje X
+          color: colorTextPrimary.trim(), // Color del título del eje X
+          font: {
+            size: 14, // Tamaño del texto del título
+          },
+        },
+        ticks: {
+          color: colorTextPrimary.trim(), // Color de las etiquetas del eje X
+        },
+        grid: {
+          color: colorTextPrimary.trim(), // Color de las líneas del grid del eje X
         },
       },
       y: {
         title: {
           display: true,
           text: "Magnitude (dB)",
+          color: colorTextPrimary.trim(), // Color del título del eje Y
+          font: {
+            size: 14, // Tamaño del texto del título
+          },
+        },
+        ticks: {
+          color: colorTextPrimary.trim(), // Color de las etiquetas del eje Y
+        },
+        grid: {
+          color: colorTextPrimary.trim(), // Color de las líneas del grid del eje Y
         },
       },
     },
-    hover: {
-      mode: "nearest",
-      intersect: false,
+    plugins: {
+      legend: {
+        display: true,
+        position: "top",
+        labels: {
+          color: colorTextPrimary.trim(), // Color del texto de la leyenda
+        },
+      },
     },
+    animation: true, // Animación activada
   };
+  
 
   return (
-    <div className="p-4">
-      <Line data={chartData} options={options} />
+    <div style={{ width: "100%", height: "400px" }}>
+      <Line data={data} options={options} />
     </div>
   );
 };
 
 export default Plot;
+
