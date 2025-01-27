@@ -1,12 +1,16 @@
-import './App.css'
-import Plotter from './assets/Plotter.jsx';
+import React from 'react';
+import Plotter from './assets/Plotter';
 
-function App() {
+const App = () => {
+  // Generar 4096 muestras aleatorias
+  const xData = Array.from({ length: 4096 }, (_, i) => i);
+  const yData = Array.from({ length: 4096 }, () => Math.random() * 2 - 1); // Valores entre -1 y 1
+
   return (
-    <div className="container">
-      <h1>Bienvenido</h1>
-      <p>Este es un fondo de página con estilos comunes en React.</p>
+    <div className="container_plot">
+      <Plotter xData={xData} yData={yData} />
     </div>
   );
-}
+};
+
 export default App;
