@@ -1,0 +1,23 @@
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  
+}
+
+:root {
+  /* Colores */
+  --color-primary: #F2F2F2;
+  --color-secondary: #D4AC98;
+  --color-accent: #52B788;
+  --color-alert: #F2994A;
+  --color-text-light: #333333;
+  --color-text-dark: #FFFFFF;
+  --color-border: #E0E0E0;
+
+  /* Fuentes */
+  --font-primary: 'Roboto Mono', monospace;
+  --font-secondary: 'Open Sans', sans-serif;
+  --font-code: 'Fira Code', monospace;
+
+}
